@@ -1,10 +1,10 @@
 const express = require('express');
 const csv = require('fast-csv');
 const router = express.Router();
-const fs = require('fs');
-// var { Movie } = require('../models/movie');
-
 const mongoose = require('mongoose');
+const fs = require('fs');
+var Movie = mongoose.model('Movie');
+
 const csvfile = __dirname + '/../public/files/imdb.csv';
 const stream = fs.createReadStream(csvfile);
 
