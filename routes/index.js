@@ -10,7 +10,7 @@ const stream = fs.createReadStream(csvfile);
 
 router
   .get('/', function(req, res, next) {
-    res.render('index', { title: 'Import CSV file using NodeJS' });
+    res.render('index', { title: 'Movies Project' });
   })
   .get('/import', function(req, res, next) {
     var movies = [];
@@ -18,15 +18,15 @@ router
     var csvStream = csv()
       .on('data', function(data) {
         var item = new Movie({
-          title: data[0],
-          rating: data[1],
-          TotalVotes: data[2],
-          genre1: data[3],
-          genre2: data[4],
-          genre3: data[5],
-          critic: data[6],
-          budget: data[7],
-          runtime: data[8]
+          title: data[1],
+          rating: data[2],
+          TotalVotes: data[3],
+          genre1: data[4],
+          genre2: data[5],
+          genre3: data[6],
+          critic: data[7],
+          budget: data[8],
+          runtime: data[9]
         });
 
         item.save(function(error) {

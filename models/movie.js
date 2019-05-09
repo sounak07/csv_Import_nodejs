@@ -11,7 +11,7 @@ const movieSchema = new Schema({
     required: true
   },
   TotalVotes: {
-    type: Number,
+    type: String,
     required: true
   },
   genre1: {
@@ -19,15 +19,15 @@ const movieSchema = new Schema({
     required: true
   },
   genre2: {
-    type: String,
-    required: true
+    type: String
+    // required: true
   },
   genre3: {
     type: String,
     required: true
   },
   critic: {
-    type: Number,
+    type: String,
     required: true
   },
   budget: {

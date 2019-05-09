@@ -25,15 +25,15 @@ $(function() {
           movie['TotalVotes'] +
           '</td><td>' +
           movie['genre1'] +
-          '</td></tr>' +
+          '</td><td>' +
           movie['genre2'] +
-          '</td></tr>' +
+          '</td><td>' +
           movie['genre3'] +
-          '</td></tr>' +
+          '</td><td>' +
           movie['critic'] +
-          '</td></tr>' +
+          '</td><td>' +
           movie['budget'] +
-          '</td></tr>' +
+          '</td><td>' +
           movie['runtime'] +
           '</td></tr>';
       });
