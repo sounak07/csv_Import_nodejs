@@ -6,6 +6,7 @@ require('./models/movie');
 
 const index = require('./routes/index');
 const graph = require('./routes/graph');
+const types = require('./routes/types');
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use(flash());
 
 app.use('/', index);
 app.use('/graph', graph);
+app.use('/types', types);
 
 app.listen(3000);
