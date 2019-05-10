@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 require('./models/movie');
 
 const index = require('./routes/index');
+const graph = require('./routes/graph');
 
 const app = express();
 
@@ -17,10 +18,11 @@ mongoose
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 app.use(flash());
 
 app.use('/', index);
+app.use('/graph', graph);
 
 app.listen(3000);

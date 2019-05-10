@@ -1,18 +1,20 @@
-$(function() {
+$(document).ready(function() {
   /** Click on Fetch data and display in HTML table **/
 
   $('#fetchdata').on('click', function() {
     $.get('/fetchdata', function(data) {
       var movies = data['data'];
 
-      $('#trdata').html('');
+      // var tb1 = '';
+
+      // $('#trdata').html('');
 
       $('#message').hide();
 
-      var string = '';
+      var mov_data = '';
 
       $.each(movies, function(index, movie) {
-        string +=
+        mov_data +=
           '<tr><td>' +
           (index + 1) +
           '</td><td>' +
@@ -38,7 +40,7 @@ $(function() {
           '</td></tr>';
       });
 
-      $('#trdata').html(string);
+      $('#movie_table').append(mov_data);
     });
   });
 
