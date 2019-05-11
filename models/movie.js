@@ -7,10 +7,10 @@ const movieSchema = new Schema({
     required: true
   },
   Rating: {
-    type: String
+    type: Number
   },
   TotalVotes: {
-    type: String
+    type: Number
   },
   Genre1: {
     type: String
@@ -22,7 +22,7 @@ const movieSchema = new Schema({
     type: String
   },
   MetaCritic: {
-    type: String
+    type: Number
   },
   Budget: {
     type: String

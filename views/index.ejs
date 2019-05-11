@@ -1,60 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
-<body class="">
-
-  <header>
-    <% include ./partials/header %>
-    <% title %>
-
-  </header>
-
-  <br>
-
-  <p id="message" class="alert alert-success" style='display:none'></p>
-
-  <div>
-    <table id="movie_table" class="table table-striped table-bordered" style="width:100%">
-      <thead>
-        <tr>
-          <th scope="col">Movie ID</th>
-          <th scope="col">Title</th>
-          <th scope="col">Rating</th>
-          <th scope="col">TotalVotes</th>
-          <th scope="col">Genre1</th>
-          <th scope="col">Genre2</th>
-          <th scope="col">Genre3</th>
-          <th scope="col">MetaCritic</th>
-          <th scope="col">Budget</th>
-          <th scope="col">Runtime</th>
-
-        </tr>
-      </thead>
-
-      <tfoot>
-        <tr>
-          <th scope="col">Movie ID</th>
-          <th style="width:100px;" scope="col">Title</th>
-          <th scope="col">Rating</th>
-          <th scope="col">TotalVotes</th>
-          <th scope="col">Genre1</th>
-          <th scope="col">Genre2</th>
-          <th scope="col">Genre3</th>
-          <th scope="col">MetaCritic</th>
-          <th scope="col">Budget</th>
-          <th scope="col">Runtime</th>
-
-        </tr>
-      </tfoot>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
-    </table>
+  <title>NineLeaps-Project</title>
 
+
+
+  <!-- Custom styles for this template -->
+  <link href="/stylesheets/cover.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+
+  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">NineLeaps</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link active" href="/">Home</a>
+          <a href="/graph" class="nav-link" target="_blank">Graph</a>
+          <a href="/Types" class="nav-link">Catgorised on ratings</a>
+
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <h1 class="cover-heading">Coding Challenge By Nineleaps.</h1>
+      <p id="message" class="alert alert-success" style='display:none'></p>
+      <p class="lead">Click on Import to import-csv and then to results to get results</p>
+      <p class="lead">
+        <a href="javascript:void(0)" class="btn btn-md btn-danger" id="importdata">Import</a>
+        <a href="/results" class="btn btn-md btn-success" target="_blank" id="fetchdata">Results</a>
+      </p>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>Design by Sounak </a><a target="_blank" href="https://sounak.me/">@sounak</a>.
+        </p>
+        <% include ./partials/footer %>
+      </div>
+    </footer>
   </div>
 
-  <footer>
-    <% include ./partials/footer %>
-  </footer>
+
+
+
 
 </body>
 
