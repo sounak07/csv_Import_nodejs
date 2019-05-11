@@ -9,22 +9,22 @@ const csvfile = __dirname + '/../public/files/imdb.csv';
 const stream = fs.createReadStream(csvfile);
 
 router
-  .get('/', function(req, res, next) {
+  .get('/', function (req, res, next) {
     res.render('index', { title: 'Movies Project' });
   })
-  .get('/import', function(req, res, next) {
+  .get('/import', function (req, res, next) {
     var movies = [];
 
     csv
       .fromStream(stream, { headers: true })
-      .on('data', function(data) {
+      .on('data', function (data) {
         var item = new Movie(data);
         item.save().then(result => {
           console.log(result);
           res
             .status(200)
             .json({
-              message: 'csv added successfully'
+              success: 'csv added successfully'
             })
             .catch(error => {
               console.log(error);
@@ -34,14 +34,14 @@ router
             });
         });
       })
-      .on('end', function() {
+      .on('end', function () {
         console.log(' End of file import');
       });
   })
-  .get('/fetchdata', function(req, res, next) {
-    Movie.find({}, function(err, docs) {
+  .get('/fetchdata', function (req, res, next) {
+    Movie.find({}, function (err, docs) {
       if (!err) {
-        res.json({ success: 'Updated Successfully', status: 200, data: docs });
+        res.json({ data: docs });
       } else {
         throw err;
       }

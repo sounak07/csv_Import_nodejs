@@ -1,60 +1,87 @@
-$(document).ready(function() {
+$(document).ready(function () {
   /** Click on Fetch data and display in HTML table **/
 
-  $('#fetchdata').on('click', function() {
-    $.get('/fetchdata', function(data) {
-      var movies = data['data'];
+  $('#fetchdata').on('click', function () {
 
-      // var tb1 = '';
+    $.ajax({
+      url: '/fetchdata',
+      method: 'get',
+      dataType: 'json',
+      success: function (data) {
+        $('#movie_table').DataTable({
+          paging: true,
+          sort: true,
+          searching: true,
+          "bFilter": true,
+          data: data['data'],
+          columns: [
+            // { data: '#' },
+            {
+              data: '_id'
+            },
+            {
+              data: 'Title'
+            },
+            {
+              data: 'Rating'
+            },
+            {
+              data: 'TotalVotes'
+            },
+            {
+              data: 'Genre1'
+            },
+            {
+              data: 'Genre2'
+            },
+            {
+              data: 'Genre3'
+            },
+            {
+              data: 'MetaCritic'
+            },
+            {
+              data: 'Budget'
+            },
+            {
+              data: 'Runtime'
+            }
+          ]
+        });
 
-      // $('#trdata').html('');
 
-      $('#message').hide();
+        $('#movie_table tfoot th').each(function () {
+          var title = $(this).text();
+          $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+        });
 
-      var mov_data = '';
+        // DataTable
+        var otable = $('#movie_table').DataTable();
 
-      $.each(movies, function(index, movie) {
-        mov_data +=
-          '<tr><td>' +
-          (index + 1) +
-          '</td><td>' +
-          movie['_id'] +
-          '</td><td>' +
-          movie['Title'] +
-          '</td><td>' +
-          movie['Rating'] +
-          '</td><td>' +
-          movie['TotalVotes'] +
-          '</td><td>' +
-          movie['Genre1'] +
-          '</td><td>' +
-          movie['Genre2'] +
-          '</td><td>' +
-          movie['Genre3'] +
-          '</td><td>' +
-          movie['MetaCritic'] +
-          '</td><td>' +
-          movie['Budget'] +
-          '</td><td>' +
-          movie['Runtime'] +
-          '</td></tr>';
-      });
+        // Apply the search
+        otable.columns().every(function () {
 
-      $('#movie_table').append(mov_data);
-    });
+          var that = this;
+          $('input', this.footer()).on('keyup change', function () {
+            if (that.search() !== this.value) {
+              that
+                .search(this.value)
+                .draw();
+            }
+          });
+        });
+
+
+
+      }
+    })
+
+
   });
-
-  $('#movie_table tfoot th').each(function() {
-    var title = $('#movie_table thead th')
-      .eq($(this).index())
-      .text();
-    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-  });
-
   /** Import data after click on a button */
 
-  $('#importdata').on('click', function() {
-    $.get('/import', function(data) {
+  $('#importdata').on('click', function () {
+    $.get('/import', function (data) {
       $('#message')
         .show()
         .html(data['success']);

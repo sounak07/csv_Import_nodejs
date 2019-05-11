@@ -1,8 +1,8 @@
-$(document).ready(function() {
-  $.get('/fetchdata', function(data) {
+$(document).ready(function () {
+  $.get('/fetchdata', function (data) {
     var files = data['data'];
 
-    $.each(files, function(index, file) {
+    $.each(files, function (index, file) {
       var best = '';
       var mediocre = '';
       var worst = '';
@@ -66,7 +66,7 @@ $(document).ready(function() {
         $('#mediocre_table').append(mediocre);
       }
 
-      if (parseFloat(file['rating']) <= 7.6) {
+      if (parseFloat(file['Rating']) <= 7.6) {
         worst +=
           '<tr><td>' +
           (index + 1) +
