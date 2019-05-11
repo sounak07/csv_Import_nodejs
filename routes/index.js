@@ -15,33 +15,28 @@ router
   .get('/import', function(req, res, next) {
     var movies = [];
 
-    var csvStream = csv()
+    csv
+      .fromStream(stream, { headers: true })
       .on('data', function(data) {
-        var item = new Movie({
-          title: data[1],
-          rating: data[2],
-          TotalVotes: data[3],
-          genre1: data[4],
-          genre2: data[5],
-          genre3: data[6],
-          critic: data[7],
-          budget: data[8],
-          runtime: data[9]
-        });
-
-        item.save(function(error) {
-          console.log(item);
-          if (error) {
-            throw error;
-          }
+        var item = new Movie(data);
+        item.save().then(result => {
+          console.log(result);
+          res
+            .status(200)
+            .json({
+              message: 'csv added successfully'
+            })
+            .catch(error => {
+              console.log(error);
+              res.status(500).json({
+                error: err
+              });
+            });
         });
       })
       .on('end', function() {
         console.log(' End of file import');
       });
-
-    stream.pipe(csvStream);
-    res.json({ success: 'Data imported successfully.', status: 200 });
   })
   .get('/fetchdata', function(req, res, next) {
     Movie.find({}, function(err, docs) {

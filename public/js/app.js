@@ -20,28 +20,35 @@ $(document).ready(function() {
           '</td><td>' +
           movie['_id'] +
           '</td><td>' +
-          movie['title'] +
+          movie['Title'] +
           '</td><td>' +
-          movie['rating'] +
+          movie['Rating'] +
           '</td><td>' +
           movie['TotalVotes'] +
           '</td><td>' +
-          movie['genre1'] +
+          movie['Genre1'] +
           '</td><td>' +
-          movie['genre2'] +
+          movie['Genre2'] +
           '</td><td>' +
-          movie['genre3'] +
+          movie['Genre3'] +
           '</td><td>' +
-          movie['critic'] +
+          movie['MetaCritic'] +
           '</td><td>' +
-          movie['budget'] +
+          movie['Budget'] +
           '</td><td>' +
-          movie['runtime'] +
+          movie['Runtime'] +
           '</td></tr>';
       });
 
       $('#movie_table').append(mov_data);
     });
+  });
+
+  $('#movie_table tfoot th').each(function() {
+    var title = $('#movie_table thead th')
+      .eq($(this).index())
+      .text();
+    $(this).html('<input type="text" placeholder="Search ' + title + '" />');
   });
 
   /** Import data after click on a button */
@@ -54,44 +61,3 @@ $(document).ready(function() {
     });
   });
 });
-// //for graph
-
-// // const url = 'http://localhost:3000/fetchdata';
-
-// window.onload = function() {
-//   var dataPoints = [];
-
-//   var chart = new CanvasJS.Chart('chartContainer', {
-//     animationEnabled: true,
-//     theme: 'light2',
-//     title: {
-//       text: 'Ratings VS Critic Graph'
-//     },
-//     axisY: {
-//       title: 'Ratings',
-//       titleFontSize: 4
-//     },
-//     data: [
-//       {
-//         type: 'column',
-//         yValueFormatString: '#,### ',
-//         dataPoints: dataPoints
-//       }
-//     ]
-//   });
-
-//   $.get('/fetchdata', function(data) {
-//     var movies = data['data'];
-
-//     $.each(movies, function(index, movie) {
-//       dataPoints.push({
-//         x: parseFloat(movie['rating']),
-//         y: parseFloat(movie['critic'])
-//       });
-//     });
-
-//     chart.render();
-//   });
-// };
-
-//for movies types

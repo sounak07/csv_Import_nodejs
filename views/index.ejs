@@ -6,6 +6,11 @@
   <header>
     <% include ./partials/header %>
     <% title %>
+    <style>
+      tfoot {
+        display: table-header-group;
+      }
+    </style>
   </header>
 
   <br>
@@ -14,21 +19,39 @@
 
   <main>
     <table class="table table-bordered table-striped" id="movie_table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Movie ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Rating</th>
+          <th scope="col">TotalVotes</th>
+          <th scope="col">Genre1</th>
+          <th scope="col">Genre2</th>
+          <th scope="col">Genre3</th>
+          <th scope="col">MetaCritic</th>
+          <th scope="col">Budget</th>
+          <th scope="col">Runtime</th>
 
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Movie ID</th>
-        <th scope="col">Title</th>
-        <th scope="col">Rating</th>
-        <th scope="col">TotalVotes</th>
-        <th scope="col">Genre1</th>
-        <th scope="col">Genre2</th>
-        <th scope="col">Genre3</th>
-        <th scope="col">MetaCritic</th>
-        <th scope="col">Budget</th>
-        <th scope="col">Runtime</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Movie ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Rating</th>
+          <th scope="col">TotalVotes</th>
+          <th scope="col">Genre1</th>
+          <th scope="col">Genre2</th>
+          <th scope="col">Genre3</th>
+          <th scope="col">MetaCritic</th>
+          <th scope="col">Budget</th>
+          <th scope="col">Runtime</th>
 
-      </tr>
+        </tr>
+      </tfoot>
+
 
     </table>
 

@@ -2,41 +2,41 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 const movieSchema = new Schema({
-  title: {
+  Title: {
     type: String,
     required: true
   },
-  rating: {
-    type: String,
-    required: true
-  },
-  TotalVotes: {
-    type: String,
-    required: true
-  },
-  genre1: {
-    type: String,
-    required: true
-  },
-  genre2: {
+  Rating: {
     type: String
     // required: true
   },
-  genre3: {
-    type: String,
-    required: true
+  TotalVotes: {
+    type: String
+    // required: true
   },
-  critic: {
-    type: String,
-    required: true
+  Genre1: {
+    type: String
+    // required: true
   },
-  budget: {
-    type: String,
-    required: true
+  Genre2: {
+    type: String
+    // required: true
   },
-  runtime: {
-    type: String,
-    required: true
+  Genre3: {
+    type: String
+    // required: true
+  },
+  MetaCritic: {
+    type: String
+    // required: true
+  },
+  Budget: {
+    type: String
+    // required: true
+  },
+  Runtime: {
+    type: String
+    // required: true
   }
 });
 

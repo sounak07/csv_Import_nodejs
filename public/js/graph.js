@@ -29,8 +29,8 @@ window.onload = function() {
 
     $.each(movies, function(index, movie) {
       dataPoints.push({
-        x: parseFloat(movie['rating']),
-        y: parseFloat(movie['critic'])
+        x: parseFloat(movie['Rating']),
+        y: parseFloat(movie['MetaCritic'])
       });
     });
 

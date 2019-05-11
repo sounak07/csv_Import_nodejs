@@ -7,37 +7,37 @@ $(document).ready(function() {
       var mediocre = '';
       var worst = '';
 
-      if (parseFloat(file['rating']) >= 8.5) {
+      if (parseFloat(file['Rating']) >= 8.5) {
         best +=
           '<tr><td>' +
           (index + 1) +
           '</td><td>' +
           file['_id'] +
           '</td><td>' +
-          file['title'] +
+          file['Title'] +
           '</td><td>' +
-          file['rating'] +
+          file['Rating'] +
           '</td><td>' +
           file['TotalVotes'] +
           '</td><td>' +
-          file['genre1'] +
+          file['Genre1'] +
           '</td><td>' +
-          file['genre2'] +
+          file['Genre2'] +
           '</td><td>' +
-          file['genre3'] +
+          file['Genre3'] +
           '</td><td>' +
-          file['critic'] +
+          file['MetaCritic'] +
           '</td><td>' +
-          file['budget'] +
+          file['Budget'] +
           '</td><td>' +
-          file['runtime'] +
+          file['Runtime'] +
           '</td></tr>';
         $('#best_table').append(best);
       }
 
       if (
-        parseFloat(file['rating']) > 7.6 &&
-        parseFloat(file['rating']) < 8.5
+        parseFloat(file['Rating']) > 7.6 &&
+        parseFloat(file['Rating']) < 8.5
       ) {
         mediocre +=
           '<tr><td>' +
@@ -45,23 +45,23 @@ $(document).ready(function() {
           '</td><td>' +
           file['_id'] +
           '</td><td>' +
-          file['title'] +
+          file['Title'] +
           '</td><td>' +
-          file['rating'] +
+          file['Rating'] +
           '</td><td>' +
           file['TotalVotes'] +
           '</td><td>' +
-          file['genre1'] +
+          file['Genre1'] +
           '</td><td>' +
-          file['genre2'] +
+          file['Genre2'] +
           '</td><td>' +
-          file['genre3'] +
+          file['Genre3'] +
           '</td><td>' +
-          file['critic'] +
+          file['MetaCritic'] +
           '</td><td>' +
-          file['budget'] +
+          file['Budget'] +
           '</td><td>' +
-          file['runtime'] +
+          file['Runtime'] +
           '</td></tr>';
         $('#mediocre_table').append(mediocre);
       }
@@ -73,23 +73,23 @@ $(document).ready(function() {
           '</td><td>' +
           file['_id'] +
           '</td><td>' +
-          file['title'] +
+          file['Title'] +
           '</td><td>' +
-          file['rating'] +
+          file['Rating'] +
           '</td><td>' +
           file['TotalVotes'] +
           '</td><td>' +
-          file['genre1'] +
+          file['Genre1'] +
           '</td><td>' +
-          file['genre2'] +
+          file['Genre2'] +
           '</td><td>' +
-          file['genre3'] +
+          file['Genre3'] +
           '</td><td>' +
-          file['critic'] +
+          file['MetaCritic'] +
           '</td><td>' +
-          file['budget'] +
+          file['Budget'] +
           '</td><td>' +
-          file['runtime'] +
+          file['Runtime'] +
           '</td></tr>';
         $('#worst_table').append(worst);
       }
