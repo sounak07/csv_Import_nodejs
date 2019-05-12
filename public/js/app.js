@@ -3,6 +3,7 @@ $(document).ready(function () {
 
   // $('#fetchdata').on('click', function () {
 
+
   $.ajax({
     url: '/fetchdata',
     method: 'get',
@@ -71,10 +72,10 @@ $(document).ready(function () {
         });
       });
 
-
-
     }
   })
+
+
 
 
   // });

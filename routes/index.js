@@ -13,7 +13,6 @@ router
     res.render('index', { title: 'Movies Project' });
   })
   .get('/import', function (req, res, next) {
-    var movies = [];
 
     csv
       .fromStream(stream, { headers: true })
@@ -21,17 +20,15 @@ router
         var item = new Movie(data);
         item.save().then(result => {
           console.log(result);
-          res
-            .status(200)
+          res.status(200)
             .json({
               success: 'csv added successfully'
             })
-            .catch(error => {
-              console.log(error);
-              res.status(500).json({
-                error
-              });
-            });
+        }).catch(error => {
+          console.log(error);
+          res.status(500).json({
+            error
+          });
         });
       })
       .on('end', function () {

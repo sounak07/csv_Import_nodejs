@@ -10,6 +10,7 @@ const types = require('./routes/types');
 const results = require('./routes/results');
 
 
+
 const app = express();
 
 mongoose.Promise = global.Promise;
@@ -29,6 +30,7 @@ app.use('/', index);
 app.use('/graph', graph);
 app.use('/types', types);
 app.use('/results', results);
+
 
 
 app.listen(3000);
