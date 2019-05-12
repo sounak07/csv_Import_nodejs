@@ -4,6 +4,6 @@ To Start the project
 
 2.npm install
 
-3.nodemon app.js
+3.npm start or node app.js
 
 4.Navigate to http://localhost:3000/ in chrome
