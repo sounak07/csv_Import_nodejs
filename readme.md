@@ -1,6 +1,6 @@
 To Start the project
 
-1.Navigate to project directory
+1.Open terminal or cmd and Navigate to project directory
 
 2.npm install
 
